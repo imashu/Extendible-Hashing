@@ -16,18 +16,18 @@ specification of the extendible hash is given below:
 ● We would hash on “TransactionID.”
 ● Ideally, the buckets in the extendible hash should be stored in the secondary memory. However, for the purpose of
 this project, they would be stored in something called “Simulated Secondary Memory (detailed below).”
-● The directory or bucket address table of the extendible hash would contain hash prefix and pointer to the bucket
+● The directory or bucket address table of the extendible hash would contain hash prefix and a pointer to the bucket
 sitting in “Simulated Secondary Memory (detailed below).”
 Simulated Secondary Memory:
-Following tips would help you achieve this.
+The following tips would help you achieve this.
 (a) The secondary memory can be simulated through an array of the abstract data-type “bucket”. You can fix a very
 large size for this array.
-(b) simulated secondary memory must be an array only. No arraylist, vector and dynamic arrays are allowed.
+(b) simulated secondary memory must be an array only. No arraylist, vector, and dynamic arrays are allowed.
 (c) The bucket capacity is fixed in terms of the number of index records it can contain. Do not hard code this number
 as it would be varied in the experiments.
 
-(d) Indices in this array form our “bucket address / hardware address.”
-(e) Here, the bucket abstract data-type would have the following information:
+(d) Indices in this array form our “bucket address/hardware address.”
+(e) Here, the bucket abstract data type would have the following information:
 a. Number of empty spaces
 b. An array of structures to store the index records. Length of this array is fixed according to the parameter
 “bucket-size” specified.
