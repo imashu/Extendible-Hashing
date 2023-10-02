@@ -20,13 +20,17 @@ this project, they would be stored in something called “Simulated Secondary Me
 sitting in “Simulated Secondary Memory (detailed below).”
 Simulated Secondary Memory:
 The following tips would help you achieve this.
+
 (a) The secondary memory can be simulated through an array of the abstract data-type “bucket”. You can fix a very
 large size for this array.
+
 (b) simulated secondary memory must be an array only. No arraylist, vector, and dynamic arrays are allowed.
+
 (c) The bucket capacity is fixed in terms of the number of index records it can contain. Do not hard code this number
 as it would be varied in the experiments.
 
 (d) Indices in this array form our “bucket address/hardware address.”
+
 (e) Here, the bucket abstract data type would have the following information:
 a. Number of empty spaces
 b. An array of structures to store the index records. Length of this array is fixed according to the parameter
@@ -35,16 +39,23 @@ c. Link to the next bucket (valid only if this bucket is overflowing)
 d. All buckets in the overflow chain must be linked. The last bucket of the overflow chain must have a
 special character denoting that it is the end of the overflow chain.
 
+
 (f) Note that in your entire code, there should be only one abstract data type for the bucket for all the
 purposes, viz., records and overflow buckets.
+
 (g) It is advisable to keep a separate area in the secondary memory for storing the overflow buckets.
+
 (h) There should be only one instance of secondary memory running in your code.
 Main Memory
+
 (a) You can assume to have enough “main memory” for “bringing” in the buckets to be rehashed.
-Other Details:
+# Other Details:
+
 (a) The most significant bits are extracted to find the directory entry.
+
 (b) Only one directory expansion is allowed per record insertion. Following the directory expansion, you may attempt
 to resolve the collision (if it still persists) by increasing the local depth (if local depth < global depth). In case the
 collision is still not resolved, just create an overflow bucket.
+
 (c) During an insert operation if there is a space in the overflow bucket associated with a has prefix then no need to
 call for any directory expansion and/or local depth increase.
